@@ -6,6 +6,11 @@ const routes = ($routeProvider, $httpProvider) => {
             controller: 'mainController',
             controllerAs: 'vm'
         })
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
+            controller: 'contactController',
+            controllerAs: 'vm'
+        })
         .otherwise({
             redirectTo: '/'
         })

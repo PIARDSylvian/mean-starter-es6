@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="col-md-11 col-md-offset-1">
+		<h2>Répertoire de {{vm.user}}</h2>
+		<p>Nombre de contats <span class="badge">{{vm.contacts.length}}</span></p>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table table-striped" style="border:solid 1px #f1f1f1;">
+			<thead>
+				<tr>
+					<th><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Nom</th>
+					<th><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Tél domicile</th>
+					<th><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Tél mobile</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input ng-model='vm.contact.nom' placeholder=' Nom de la personne'></td>
+					<td><input ng-model='vm.contact.fixe' placeholder=' n° de téléphone fixe'></td>
+					<td><input ng-model='vm.contact.mobile' placeholder=' n° de téléphone mobile'></td>
+					<td></td>
+					<td>
+						<span class="btn btn-default btn-sm btn-success glyphicon glyphicon-ok" ng-click='vm.create()' type="button"> Ajout</span>
+					</td>
+				</tr>
+				<!-- on parcours le tableau contacts -->
+				<tr ng-repeat='contact in vm.contacts'>
+					<td><input type="text" class="form-control" placeholder="Todo" ng-model='contact.nom'></td>
+					<td><input type="text" class="form-control" placeholder="Todo" ng-model='contact.fixe'></td>
+					<td><input type="text" class="form-control" placeholder="Todo" ng-model='contact.mobile'></td>
+					<td>
+						<span class="btn btn-default btn-sm btn-primary glyphicon glyphicon-refresh" ng-click='vm.update(contact)' type="button"> modifier</span>
+					</td>
+					<td>
+						<span class="btn btn-default btn-sm btn-danger glyphicon glyphicon-trash" ng-click='vm.delete(contact)' type="button"> Supprimer</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
